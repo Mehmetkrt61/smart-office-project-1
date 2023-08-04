@@ -110,7 +110,7 @@ const Scenery = () => {
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               Hırsızlığa karşı güvenlik önlemini kapatır, ışıkları, perdeleri ve
               bilgisayarları açar, gerekliyse klima ve nemlendirici
-              çalıştırılır.
+              çalıştırır.
             </p>
 
             <button
@@ -166,8 +166,8 @@ const Scenery = () => {
               </div>
             </a>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Dış kapıyı kilitler; klimayı, nemlendiriciyi, prizleri, ve enerji
-              harcayan diğer cihazların elektriğini keser ve hırsızlığa karşı
+              Dış kapıyı kilitler; klimayı, nemlendiriciyi, prizleri ve enerji
+              harcayan diğer cihazların elektriğini keser, hırsızlığa karşı
               güvenlik sistemlerini çalıştırır.
             </p>
 

@@ -51,24 +51,11 @@ const Homepage = () => {
 
   return (
     <>
-      <div className="text-outline text-center font-bold text-4xl text-black dark:text-white text-outline mr-28">
-        Hoş Geldini
-
-
-      </div>
-
-      <div className="mt-8"></div>
-
-      <div className="flex justify-between items-center">
-        <div className="flex">
-          <a
-            href="#"
-            class="text-left font-bold text-2xl text-gray-900 dark:text-white ml-4 text-primary-600 hover:underline dark:text-primary-500"
-          >
-            Ofis
-          </a>
-        </div>
-        <div>
+      <div className="flex justify-between">
+        <p className="flex justify-center text-outline font-bold text-4xl text-black dark:text-white text-outline">
+          Hoş Geldiniz
+        </p>
+        <p className="flex justify-end">
           <button
             className="flex justify-end items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => handleToggle("senaryoolustur")}
@@ -82,6 +69,20 @@ const Homepage = () => {
               viewBox="0 0 14 10"
             />
           </button>
+        </p>
+      </div>
+
+      <div className="flex justify-between items-center">
+        <div className="mt-8"></div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="flex">
+          <a
+            href="#"
+            class="text-left font-bold text-2xl text-gray-900 dark:text-white ml-4 text-primary-600 dark:text-primary-500"
+          >
+            Ofis
+          </a>
         </div>
       </div>
 
