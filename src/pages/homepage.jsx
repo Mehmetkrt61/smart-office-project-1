@@ -52,7 +52,7 @@ const Homepage = () => {
   return (
     <>
       <div className="text-outline text-center font-bold text-4xl text-black dark:text-white text-outline mr-28">
-        Hoş Geldiniz
+        Hoş Geldiniz 2
       </div>
 
       <div className="mt-8"></div>
