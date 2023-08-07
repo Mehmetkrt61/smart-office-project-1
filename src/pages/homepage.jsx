@@ -76,6 +76,12 @@ const Homepage = () => {
     }
   };
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <>
       <div className="flex justify-between">
@@ -84,9 +90,10 @@ const Homepage = () => {
         </p>
         <p className="flex justify-end">
           <button
-            className="flex justify-end items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onClick={() => handleToggle("senaryoolustur")}
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:outline-none focus:ring-gray-600 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={toggleVisibility}
           >
+            {isVisible ? "" : ""}
             Sayfayı düzenle
             <svg
               className="w-3.5 h-3.5 ml-2"
@@ -131,6 +138,8 @@ const Homepage = () => {
                   <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Aydınlatma
                   </h5>
+                  <p>
+                  {isVisible && (
                   <button>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -143,10 +152,30 @@ const Homepage = () => {
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
                   </button>
+                )}
+                  {isVisible && (
+                    <button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                  </p>
                 </div>
               </a>
 
@@ -201,6 +230,8 @@ const Homepage = () => {
                   <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Senaryolar
                   </h5>
+                  <p>
+                  {isVisible && (
                   <button>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -213,10 +244,30 @@ const Homepage = () => {
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
                   </button>
+                )}
+                  {isVisible && (
+                    <button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                  </p>
                 </div>
               </a>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -278,6 +329,8 @@ const Homepage = () => {
                   <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     İklimlendirme
                   </h5>
+                  <p>
+                  {isVisible && (
                   <button>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -290,10 +343,30 @@ const Homepage = () => {
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
                   </button>
+                )}
+                  {isVisible && (
+                    <button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                  </p>
                 </div>
               </a>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -350,6 +423,8 @@ const Homepage = () => {
                   <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Enerji Tüketimi
                   </h5>
+                  <p>
+                  {isVisible && (
                   <button>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -362,10 +437,30 @@ const Homepage = () => {
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
                   </button>
+                )}
+                  {isVisible && (
+                    <button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                  </p>
                 </div>
               </a>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
