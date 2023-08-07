@@ -15,6 +15,11 @@ const Homepage = () => {
   const [isExited, setIsExited] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
 
+  const [button1Text, setButton1Text] = useState("Işıkları aç");
+  const [button2Text, setButton2Text] = useState("Perdeyi aç");
+  const [button3Text, setButton3Text] = useState("Klimayı aç");
+  const [button4Text, setButton4Text] = useState("Nemlendiriciyi aç");
+
   const handleEnter = () => {
     setIsEntered((prevIsEntered) => !prevIsEntered);
     setIsExited(false); // Reset exit button state
@@ -49,10 +54,32 @@ const Homepage = () => {
     }
   };
 
+  const handleButtonClick = (buttonNumber) => {
+    if (buttonNumber === 1) {
+      setButton1Text(
+        button1Text === "Işıkları aç" ? "Işıkları kapat" : "Işıkları aç"
+      );
+    } else if (buttonNumber === 2) {
+      setButton2Text(
+        button2Text === "Perdeyi aç" ? "Perdeyi kapat" : "Perdeyi aç"
+      );
+    } else if (buttonNumber === 3) {
+      setButton3Text(
+        button3Text === "Klimayı aç" ? "Klimayı kapat" : "Klimayı aç"
+      );
+    } else if (buttonNumber === 4) {
+      setButton4Text(
+        button4Text === "Nemlendiriciyi aç"
+          ? "Nemlendiriciyi kapat"
+          : "Nemlendiriciyi aç"
+      );
+    }
+  };
+
   return (
     <>
       <div className="flex justify-between">
-        <p className="flex justify-center text-outline font-bold text-4xl text-black dark:text-white text-outline">
+        <p className="ml-96 flex justify-center text-outline font-bold text-4xl text-black dark:text-white text-outline">
           Hoş Geldiniz
         </p>
         <p className="flex justify-end">
@@ -60,7 +87,7 @@ const Homepage = () => {
             className="flex justify-end items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => handleToggle("senaryoolustur")}
           >
-            {isOpen.senaryoolustur ? "Sayfayı düzenle" : "Sayfayı düzenle"}
+            Sayfayı düzenle
             <svg
               className="w-3.5 h-3.5 ml-2"
               aria-hidden="true"
@@ -129,9 +156,10 @@ const Homepage = () => {
               <div className=" space-x-8">
                 <button
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => handleToggle("isik")}
+                  onClick={() => handleButtonClick(1)}
                 >
-                  {isOpen.isik ? "Işıkları aç" : "Işıkları kapat"}
+                  {button1Text}
+
                   <svg
                     className="w-3.5 h-3.5 ml-2"
                     aria-hidden="true"
@@ -143,9 +171,9 @@ const Homepage = () => {
 
                 <button
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => handleToggle("perde")}
+                  onClick={() => handleButtonClick(2)}
                 >
-                  {isOpen.perde ? "Perdeleri aç" : "Perdeleri kapat"}
+                  {button2Text}
                   <svg
                     className="w-3.5 h-3.5 ml-2"
                     aria-hidden="true"
@@ -275,9 +303,9 @@ const Homepage = () => {
               <div className=" space-x-6">
                 <button
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => handleToggle("klima")}
+                  onClick={() => handleButtonClick(3)}
                 >
-                  {isOpen.klima ? "Klimayı aç" : "Klimayı kapat"}
+                  {button3Text}
                   <svg
                     className="w-3.5 h-3.5 ml-2"
                     aria-hidden="true"
@@ -289,11 +317,10 @@ const Homepage = () => {
 
                 <button
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => handleToggle("nemlendirici")}
+                  onClick={() => handleButtonClick(4)}
                 >
-                  {isOpen.nemlendirici
-                    ? "Nemlendiriciyi aç"
-                    : "Nemlendiriciyi kapat"}
+                  {button4Text}
+
                   <svg
                     className="w-3.5 h-3.5 ml-2"
                     aria-hidden="true"
