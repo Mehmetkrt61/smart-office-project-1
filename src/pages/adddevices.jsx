@@ -30,10 +30,10 @@ const Adddevices = () => {
     <div>
       <h1>
         
-      <div className="max-w-2xl bg-gray-200 border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mt-4 opacity-95">
+      <div className="max-w-2xl bg-gray-700 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mt-4 opacity-95">
         <div className="p-5">
           <a href="#">
-            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Cihaz Ekle</h5>
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-200 dark:text-white">Cihaz Ekle</h5>
           </a>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">    </p>
           
