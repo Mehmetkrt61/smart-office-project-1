@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Notifications = () => {
+const Logbook = () => {
   const [isOpen, setIsOpen] = useState({});
 
   const [isEntered, setIsEntered] = useState(false);
@@ -114,7 +114,7 @@ const Notifications = () => {
           <a href="#">
             <div className="flex justify-between items-center">
               <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-200 dark:text-white">
-                Bildirimler
+                Log Geçmişi
               </h5>
               {isVisible && (
                 <button>
@@ -144,4 +144,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications;
+export default Logbook;

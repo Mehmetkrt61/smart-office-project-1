@@ -19,6 +19,8 @@ import Notifications from './pages/notifications.jsx';
 import Profiles from './pages/profiles.jsx';
 import Scenerycreater from './pages/scenerycreater.jsx';
 import Adddevices from './pages/adddevices.jsx';
+import Logbook from './pages/logbook.jsx';
+
 
 
 
@@ -80,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "clock",
         element: <Clock />,
+      },
+      {
+        path: "Logbook",
+        element: <Logbook />,
       },
     ],
   },

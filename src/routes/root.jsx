@@ -1,7 +1,54 @@
 import { Outlet, Link } from "react-router-dom";
 import "../App.css";
+import { useState, useEffect } from "react";
 
 const Root = () => {
+  const handleButtonClick = (buttonNumber) => {
+    if (buttonNumber === 1) {
+      setButton1Text(
+        button1Text === "Işıkları aç" ? "Işıkları kapat" : "Işıkları aç"
+      );
+    } else if (buttonNumber === 2) {
+      setButton2Text(
+        button2Text === "Perdeyi aç" ? "Perdeyi kapat" : "Perdeyi aç"
+      );
+    } else if (buttonNumber === 3) {
+      setButton3Text(
+        button3Text === "Klimayı aç" ? "Klimayı kapat" : "Klimayı aç"
+      );
+    } else if (buttonNumber === 4) {
+      setButton4Text(
+        button4Text === "Nemlendiriciyi aç"
+          ? "Nemlendiriciyi kapat"
+          : "Nemlendiriciyi aç"
+      );
+    }
+  };
+
+  const [theme, setTheme] = useState("light");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleThemeToggle = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    setIsDarkTheme(newTheme === "dark");
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+  const [isFirstIcon, setIsFirstIcon] = useState(true);
+  const handleClick = () => {
+    setIsFirstIcon((prevState) => !prevState);
+  };
+
   return (
     <>
       <button
@@ -26,18 +73,29 @@ const Root = () => {
           ></path>
         </svg>
       </button>
+
       <aside
         id="default-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 opacity-95"
+        class="fixed top-20 left-6 z-40 w-60 h-screen transition-transform -translate-x-full sm:translate-x-0 opacity-95"
         aria-label="Sidebar"
       >
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800 dark:bg-gray-800">
+        <div
+          className={`h-90 px-3 py-4 overflow-y-auto rounded-3xl ${
+            isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+          }  ${isDarkMode ? "bg-gray-200" : "bg-gray-800"}`}
+        >
           <ul class="space-y-2 font-medium">
             <li>
               <Link
                 to={`homepage`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2  rounded-lg  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +122,13 @@ const Root = () => {
               <Link
                 to={`control-panel`}
                 href="#"
-                className="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +153,13 @@ const Root = () => {
               <Link
                 to={`scenery`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   class="w-7 h-7 dark:text-white bi bi-gear"
@@ -119,7 +189,13 @@ const Root = () => {
               <Link
                 to={`energyconsumption`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +221,13 @@ const Root = () => {
               <Link
                 to={`settings`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-900 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -172,9 +254,48 @@ const Root = () => {
             </li>
             <li>
               <Link
+                to={`logbook`}
+                href="#"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-7 h-7"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
+                  />
+                </svg>
+
+                <title>home </title>
+                <path d="M9.12,3.54l-5,3.68A1.65,1.65,0,0,0,3.44,8.6v6.76a1.35,1.35,0,0,0,1.35,1.35H7.94V13.28a2.08,2.08,0,0,1,4.16,0v3.46h3.11a1.34,1.34,0,0,0,1.35-1.35V8.6a1.73,1.73,0,0,0-.69-1.38L10.92,3.54a1.56,1.56,0,0,0-1.8,0Zm0,0" />
+
+                <span className="ml-3">Logbook</span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 to={`notifications`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +322,13 @@ const Root = () => {
               <Link
                 to={`profiles`}
                 href="#"
-                class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group"
+                className={`flex items-center p-2 rounded-lg group  ${
+                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
+                }  ${
+                  isDarkMode
+                    ? "text-gray-800 hover:bg-gray-400"
+                    : "text-gray-300 hover:bg-gray-700"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -227,6 +354,37 @@ const Root = () => {
           </ul>
         </div>
       </aside>
+
+      <p className="mr-3">
+        <button
+          onClick={toggleDarkMode}
+          className="w-6 h-6 text-gray-200 focus:outline-none"
+        >
+          {isDarkMode ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6 text-gray-200"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6 text-gray-200"
+            >
+              <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+            </svg>
+          )}
+        </button>
+      </p>
 
       <div class="p-4 sm:ml-64">
         <div class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
