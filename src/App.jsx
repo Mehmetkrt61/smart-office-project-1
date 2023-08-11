@@ -5,6 +5,7 @@ import './App.css'
 
 import TemperatureSensor from './component/TemperatureSensor.jsx';
 import LightSwitch from './component/LightSwitch.jsx';
+
 import { Outlet } from 'react-router-dom';
 
 
