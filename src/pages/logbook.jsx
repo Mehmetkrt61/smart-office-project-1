@@ -47,14 +47,14 @@ const Logbook = () => {
 
   const [isFirstIcon, setIsFirstIcon] = useState(true);
   const handleClick = () => {
-    setIsFirstIcon(prevState => !prevState);
+    setIsFirstIcon((prevState) => !prevState);
   };
 
   return (
     <>
       <div className="flex justify-end mt-2">
         <button
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:outline-none focus:ring-gray-600 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:outline-none dark:bg-gray-400 dark:hover:bg-gray-500 "
           onClick={toggleVisibility}
         >
           {isVisible ? "" : ""}
@@ -68,9 +68,9 @@ const Logbook = () => {
           />
         </button>
       </div>
-      
+
       <div className="flex justify-end mt-7">
-      <p className="mr-3">
+        {/* <p className="mr-3">
           <button
       onClick={handleClick}
       className="w-6 h-6 text-gray-200 focus:outline-none"
@@ -99,10 +99,10 @@ const Logbook = () => {
         </svg>
       )}
     </button>
-        </p>
-        </div>
+        </p> */}
+      </div>
 
-      <div className="max-w-6xl bg-gray-800 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700 mb-6 mt-4 opacity-95">
+      <div className="max-w-6xl bg-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:bg-gray-800 mb-6 mt-4 opacity-95">
         <a href="#">
           <img
             className="rounded-t-lg"
@@ -113,26 +113,26 @@ const Logbook = () => {
         <div className="p-5">
           <a href="#">
             <div className="flex justify-between items-center">
-              <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-200 dark:text-white">
+              <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-200 dark:text-white">
                 Log Geçmişi
               </h5>
               {isVisible && (
                 <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 text-gray-200"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
+                </button>
               )}
             </div>
           </a>

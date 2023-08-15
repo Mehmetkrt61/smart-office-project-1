@@ -13,15 +13,26 @@
 /* App.css */
 
 body {
-  background-image: url('images/image2.jpg'); /* Arka plan resmi */
   background-size: cover; /* Resmin ekranı kaplamasını sağlar */
   background-repeat: no-repeat; /* Resmin tekrar etmemesini sağlar */
   justify-content: center;
   height: 100vh; 
   margin: 0;  
   padding: 0; 
+  transition: background-image 0.3s ease; /* Yavaşça geçiş yapması için geçiş efekti ekle */
+  background-image: url('images/image2.jpg'); /* Arka plan resmi */
+
 }
 
+.light-theme {
+
+background-image: url('images/image.jpg'); /* Arka plan resmi */
+
+}
+
+.dark-theme {
+  background-image: url('images/image2.jpg'); /* Arka plan resmi */
+}
 
 
 

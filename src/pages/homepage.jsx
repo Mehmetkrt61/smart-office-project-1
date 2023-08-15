@@ -102,13 +102,19 @@ const Homepage = () => {
 
   return (
     <>
-      <div className="flex justify-between">
-        <p className="ml-96 flex justify-center text-outline font-bold text-4xl text-white dark:text-white text-outline">
+      {/* <div className="flex justify-between"> */}
+      <div className="flex flex-row">
+        <div className="basis-1/2">
+        <p className="flex justify-end text-outline font-bold text-4xl text-white dark:text-white text-outline">
           Hoş Geldiniz
         </p>
+        </div>
+
+        <div className="basis-1/2">
+
         <p className="flex justify-end">
           <button
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:outline-none focus:ring-gray-600 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="inline-flex items-center px-3 mt-2 py-3 h-9 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:outline-none dark:bg-gray-400 dark:hover:bg-gray-500 "
             onClick={toggleVisibility}
           >
             {isVisible ? "" : ""}
@@ -122,10 +128,13 @@ const Homepage = () => {
             />
           </button>
         </p>
-      </div>
+        </div>
+        </div>
+
+      {/* </div> */}
 
       <div className="flex justify-between items-center">
-        <div className="mt-8"></div>
+        <div className="mt-7"></div>
       </div>
       <div className="flex justify-between items-center">
         <div className="flex">
@@ -137,7 +146,7 @@ const Homepage = () => {
           </a>
         </div>
 
-        <p className="mr-3">
+        {/* <p className="mr-3">
           <button
             onClick={toggleDarkMode}
             className="w-6 h-6 text-gray-200 focus:outline-none"
@@ -147,7 +156,7 @@ const Homepage = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-6 h-6 text-gray-200"
+                className="w-6 h-6 text-gray-200 "
               >
                 <path
                   fillRule="evenodd"
@@ -166,17 +175,13 @@ const Homepage = () => {
               </svg>
             )}
           </button>
-        </p>
+        </p> */}
       </div>
 
       <div className="flex flex-row">
         <div className="basis-1/2">
           {/* Kart 1 */}
-          <div
-            className={`max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 ${
-              isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-            }  ${isDarkMode ? "bg-gray-200" : "bg-gray-800"}`}
-          >
+          <div className="max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 dark:border-gray-700 border-gray-700 bg-gray-200 dark:bg-gray-800">
             <a href="#">
               <img
                 className="rounded-t-lg"
@@ -188,11 +193,7 @@ const Homepage = () => {
             <div className="p-5">
               <a href="#">
                 <div className="flex justify-between items-center">
-                  <h5
-                    className={` text-xl font-bold tracking-tight  ${
-                      isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                    }  ${isDarkMode ? "text-gray-800" : "text-white"}`}
-                  >
+                  <h5 className="text-xl font-bold tracking-tight dark:border-gray-700 border-gray-700 text-gray-800 text-black dark:text-gray-200">
                     Aydınlatma
                   </h5>
                   <p>
@@ -204,13 +205,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          className={`w-6 h-6  mb-2 text-xl font-bold tracking-tight  ${
-                            isDarkMode
-                              ? "dark:border-gray-700"
-                              : "border-gray-700"
-                          } mb-6 mt-4 opacity-90 ${
-                            isDarkMode ? "text-gray-800" : "text-white"
-                          }`}
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -228,13 +223,8 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          className={`w-6 h-6  mb-2 text-xl font-bold tracking-tight  ${
-                            isDarkMode
-                              ? "dark:border-gray-700"
-                              : "border-gray-700"
-                          } mb-6 mt-4 opacity-90 ${
-                            isDarkMode ? "text-gray-800" : "text-white"
-                          }`}
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
+
                         >
                           <path
                             stroke-linecap="round"
@@ -248,16 +238,12 @@ const Homepage = () => {
                 </div>
               </a>
 
-              <p
-                className={`mb-3 font-normal opacity-90 mt-4 ${
-                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                } ${isDarkMode ? "text-black" : "text-white"}`}
-              >
+              <p className="mb-3 font-normal opacity-90 mt-4 dark:border-gray-700 border-gray-700 text-black dark:text-gray-200">
                 Işıklandırma veya perde sistemini kontrol edin.
               </p>
               <div className=" space-x-8">
                 <button
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-900"
                   onClick={() => handleButtonClick(1)}
                   style={{
                     minWidth: "130px",
@@ -278,7 +264,7 @@ const Homepage = () => {
                 </button>
 
                 <button
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-900"
                   onClick={() => handleButtonClick(2)}
                   style={{
                     minWidth: "137px",
@@ -300,11 +286,7 @@ const Homepage = () => {
             </div>
           </div>
           {/* Kart 2 */}
-          <div
-            className={`max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 ${
-              isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-            }  ${isDarkMode ? "bg-gray-200" : "bg-gray-800"}`}
-          >
+          <div className="max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 dark:border-gray-700 border-gray-700 bg-gray-200 dark:bg-gray-800">
             {" "}
             <a href="#">
               <img
@@ -316,11 +298,7 @@ const Homepage = () => {
             <div className="p-5">
               <a href="#">
                 <div className="flex justify-between items-center">
-                  <h5
-                    className={` text-xl font-bold tracking-tight  ${
-                      isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                    }  ${isDarkMode ? "text-gray-800" : "text-white"}`}
-                  >
+                  <h5 className="text-xl font-bold tracking-tight dark:border-gray-700 border-gray-700 text-gray-800 text-black dark:text-gray-200">
                     {" "}
                     Senaryolar
                   </h5>
@@ -333,7 +311,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -351,7 +329,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -364,11 +342,8 @@ const Homepage = () => {
                   </p>
                 </div>
               </a>
-              <p
-                className={`mb-3 font-normal opacity-90 mt-4 ${
-                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                } ${isDarkMode ? "text-black" : "text-white"}`}
-              >
+              <p className="mb-3 font-normal opacity-90 mt-4 dark:border-gray-700 border-gray-700 text-black dark:text-gray-200">
+
                 {" "}
                 Önceden ayarladığınız senaryoları çalıştırın.
               </p>
@@ -377,9 +352,9 @@ const Homepage = () => {
                 <button
                   className={
                     isOpen.ofisegiris
-                      ? "bg-gray-600 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      : "bg-gray-400 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-                  }
+                    ? "bg-gray-600 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-black"
+                    : "bg-gray-400 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-700 dark:focus:ring-black "
+                }
                   onClick={() => handleToggle("ofisegiris")}
                 >
                   {isOpen.ofisegiris ? "Ofise giriş" : "Ofise giriş"}
@@ -395,9 +370,9 @@ const Homepage = () => {
                 <button
                   className={
                     isOpen.ofistencikis
-                      ? "bg-gray-600 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      : "bg-gray-400 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-                  }
+                    ? "bg-gray-600 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-black"
+                    : "bg-gray-400 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-700 dark:focus:ring-black "
+                }
                   onClick={() => handleToggle("ofistencikis")}
                 >
                   {isOpen.perde ? "Ofisten çıkış" : "Ofisten çıkış"}
@@ -413,11 +388,7 @@ const Homepage = () => {
             </div>
           </div>
           {/* Kart 3 */}
-          <div
-            className={`max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 ${
-              isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-            }  ${isDarkMode ? "bg-gray-200" : "bg-gray-800"}`}
-          >
+          <div className="max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 dark:border-gray-700 border-gray-700 bg-gray-200 dark:bg-gray-800">
             {" "}
             <a href="#">
               <img
@@ -429,11 +400,7 @@ const Homepage = () => {
             <div className="p-5">
               <a href="#">
                 <div className="flex justify-between items-center">
-                  <h5
-                    className={` text-xl font-bold tracking-tight  ${
-                      isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                    }  ${isDarkMode ? "text-gray-800" : "text-white"}`}
-                  >
+                  <h5 className="text-xl font-bold tracking-tight dark:border-gray-700 border-gray-700 text-gray-800 text-black dark:text-gray-200">
                     {" "}
                     İklimlendirme
                   </h5>
@@ -446,7 +413,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -464,7 +431,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -477,18 +444,15 @@ const Homepage = () => {
                   </p>
                 </div>
               </a>
-              <p
-                className={`mb-3 font-normal opacity-90 mt-4 ${
-                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                } ${isDarkMode ? "text-black" : "text-white"}`}
-              >
+              <p className="mb-3 font-normal opacity-90 mt-4 dark:border-gray-700 border-gray-700 text-black dark:text-gray-200">
+
                 {" "}
                 İhtiyacınıza göre klimayı veya nemlendiriciyi çalıştırın.
               </p>
 
               <div className=" space-x-6">
                 <button
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-900"
                   onClick={() => handleButtonClick(3)}
                   style={{
                     minWidth: "136px",
@@ -508,7 +472,7 @@ const Homepage = () => {
                 </button>
 
                 <button
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-gray-400 rounded-2xl hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-900 dark:bg-gray-400 dark:hover:bg-gray-500 dark:focus:ring-gray-900"
                   onClick={() => handleButtonClick(4)}
                   style={{
                     minWidth: "181px",
@@ -534,11 +498,7 @@ const Homepage = () => {
 
         <div className="basis-1/2">
           {/* Kart 4 */}
-          <div
-            className={`max-w-md rounded-3xl shadow mb-6 mt-4 opacity-90 ${
-              isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-            }  ${isDarkMode ? "bg-gray-200" : "bg-gray-800"}`}
-          >
+          <div className="max-w-sm rounded-3xl shadow mb-6 mt-4 opacity-90 dark:border-gray-700 border-gray-700 bg-gray-200 dark:bg-gray-800">
             {" "}
             <a href="#">
               <img
@@ -550,11 +510,7 @@ const Homepage = () => {
             <div className="p-5">
               <a href="#">
                 <div className="flex justify-between items-center">
-                  <h5
-                    className={` text-xl font-bold tracking-tight  ${
-                      isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                    }  ${isDarkMode ? "text-gray-800" : "text-white"}`}
-                  >
+                  <h5 className="text-xl font-bold tracking-tight dark:border-gray-700 border-gray-700 text-gray-800 text-black dark:text-gray-200">
                     {" "}
                     Enerji Tüketimi
                   </h5>
@@ -567,7 +523,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -585,7 +541,7 @@ const Homepage = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-6 h-6 text-gray-200"
+                          className="w-6 h-6 text-xl font-bold tracking-tight dark:text-gray-200 border-gray-700  opacity-90 text-gray-800"
                         >
                           <path
                             stroke-linecap="round"
@@ -598,11 +554,8 @@ const Homepage = () => {
                   </p>
                 </div>
               </a>
-              <p
-                className={`mb-3 font-normal opacity-90 mt-4 ${
-                  isDarkMode ? "dark:border-gray-700" : "border-gray-700"
-                } ${isDarkMode ? "text-black" : "text-white"}`}
-              >
+              <p className="mb-3 font-normal opacity-90 mt-4 dark:border-gray-700 border-gray-700 text-black dark:text-gray-200">
+
                 {" "}
                 Enerji tüketimini buradan takip edebilirsiniz.
               </p>

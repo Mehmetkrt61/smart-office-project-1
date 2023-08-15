@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const Profiles = () => {
- 
   const [isFirstIcon, setIsFirstIcon] = useState(true);
   const handleClick = () => {
-    setIsFirstIcon(prevState => !prevState);
+    setIsFirstIcon((prevState) => !prevState);
   };
   return (
     <div>
       <div className="flex justify-end">
-      <p className="mr-3">
+        {/* <p className="mr-3">
           <button
       onClick={handleClick}
       className="w-6 h-6 text-gray-200 focus:outline-none"
@@ -38,14 +37,14 @@ const Profiles = () => {
         </svg>
       )}
     </button>
-        </p>
-        </div>
+        </p> */}
+      </div>
       <div className="mt-40"></div>
       <div className="flex justify-center items-center mr-28">
-        <div class="w-full bg-gray-800 rounded-3xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 opacity-90">
+        <div class="w-full bg-gray-200 rounded-3xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 opacity-90">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="flex justify-center">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-200 md:text-2xl dark:text-white">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-800 dark:text-gray-200 md:text-2xl dark:text-white">
                 Giriş yap
               </h1>
             </div>
@@ -53,7 +52,7 @@ const Profiles = () => {
               <div>
                 <label
                   for="email"
-                  class="block mb-2 text-sm font-medium text-gray-200 dark:text-white"
+                  class="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-200 dark:text-white"
                 >
                   Kullanıcı adı
                 </label>
@@ -61,7 +60,7 @@ const Profiles = () => {
                   type="email"
                   name="email"
                   id="email"
-                  class=" bg-gray-500 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class=" bg-gray-300 dark:bg-gray-500 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="örnek@mail.com"
                   required
                 />
@@ -69,7 +68,7 @@ const Profiles = () => {
               <div>
                 <label
                   for="password"
-                  class="block mb-2 text-sm font-medium text-gray-200 dark:text-white"
+                  class="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-200 dark:text-white"
                 >
                   Şifre
                 </label>
@@ -78,7 +77,7 @@ const Profiles = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  class="bg-gray-500 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-300 dark:bg-gray-500  text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
@@ -96,7 +95,7 @@ const Profiles = () => {
                   <div class="ml-1 text-sm">
                     <label
                       for="remember"
-                      class="text-gray-200 dark:text-gray-300"
+                      class="text-gray-800 dark:text-gray-200"
                     >
                       Beni hatırla
                     </label>
@@ -104,7 +103,7 @@ const Profiles = () => {
                 </div>
                 <a
                   href="#"
-                  class="text-sm font-medium text-gray-200 text-primary-600 hover:underline dark:text-primary-500"
+                  class="text-sm font-medium text-gray-800 dark:text-gray-200 text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Şifreyi unuttum!
                 </a>
@@ -115,7 +114,7 @@ const Profiles = () => {
                   <div className="flex">
                     <a
                       href="#"
-                      class="font-medium text-gray-200 text-primary-600 hover:underline dark:text-primary-500"
+                      class="font-medium text-gray-800 dark:text-gray-200 text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Kullanıcı oluştur
                     </a>
