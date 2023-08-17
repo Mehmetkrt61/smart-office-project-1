@@ -17,6 +17,7 @@
     "chart.js": "^4.3.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "precompiled-mqtt": "^4.3.14-beta",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.0-beta.0",
     "react-dom": "^18.2.0",

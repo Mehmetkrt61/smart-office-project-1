@@ -20,6 +20,7 @@ import Profiles from './pages/profiles.jsx';
 import Scenerycreater from './pages/scenerycreater.jsx';
 import Adddevices from './pages/adddevices.jsx';
 import Logbook from './pages/logbook.jsx';
+import Mqtt from './pages/mqtt.jsx';
 
 
 
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "Logbook",
         element: <Logbook />,
+      },
+      {
+        path: "/mqtt",
+        element: <Mqtt />,
       },
     ],
   },
